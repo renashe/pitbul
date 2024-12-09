@@ -2,7 +2,7 @@
 	box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, a, nav, p, body, span, label, ul, button, li{
+h1, h2, h3, h4, h5, a, nav, p, body, span, label, ul, button, li, input{
 	margin: 0;
 	font-family: 'Inter', sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -217,6 +217,25 @@ h2{
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 }
+.table-body{
+	overflow-y: scroll;
+	max-height: 400px;
+}
+.table-body::-webkit-scrollbar {
+	width: 6px;  
+	cursor: pointer;
+}
+
+.table-body::-webkit-scrollbar-track {
+	background: #374152; 
+	border-radius: 10px;
+}
+
+.table-body::-webkit-scrollbar-thumb {
+	background: #D1D5DB; 
+	border-radius: 10px;
+	border-left: 4px solid rgba(0, 0, 0, 0);
+}
 .table-body-cont{
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
@@ -230,10 +249,10 @@ h2{
 	text-align: start;
 	border-bottom: 0.8px solid #1f2a38;
 }
-.table-body-cont span{
+.table-body-cont{
 	transition: all 0.3s ease;
 }
-table tbody tr:hover{
+.table-body-cont:hover{
 	background: #1f2a38;
 }
 .table-body span{
@@ -242,11 +261,6 @@ table tbody tr:hover{
 	color: #fff;
 	font-size: 0.875rem;
 }
-table tbody tr td span{
-	padding: 4px;
-    font-size: 12px;
-    border-radius: 8px;
-}
 .client-state{
 	border-radius: 999px;
 	width: fit-content;
@@ -254,10 +268,14 @@ table tbody tr td span{
 	font-weight: 500;
 	font-size: 12px;
 }
+.renewal-payx{
+	width: 85%;
+}
 .client-state p{
 	color: #fff;
 	display: flex;
     align-items: center;
+	justify-content: center;
     gap: 4px;
 }
 .client-state h4{
@@ -289,26 +307,48 @@ table tbody tr td span{
 .red {
     background: #c0392b; 
 }
+.table-body.pay{
+	max-height: 216px;
+}
+.pay{
+	grid-template-columns: 1fr 1fr 1fr 1fr 1.1fr 0.8fr;
+}
+.renewal-pay{
+	text-align: center;
+}
 .pending-card-cont{
 	display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-	gap: 15px;
+  	grid-template-columns: 1fr 1fr 1fr;
+	gap: 30px;
 }
 .pending-card{
 	display: flex;
 	flex-direction: column;
 	padding: 16px;
-	gap: 10px;
   border: 1px solid rgb(96, 165, 250);
   border-radius: 8px;
+  position: relative;
+  transition: all 0.3s ease;
+  background-color: rgba(8, 20, 50, 0.9);
+}
+.pending-card:hover{
+	background: #1f2a38;
 }
 .pending-card div{
 	display: flex;
-	justify-content: space-between;
+	align-items: center;
+	padding-top: 10px;
+	margin-bottom: 10px;
+	border-top: 1px solid #D1D5DB;
+	gap: 5px;
 }
-.pending-card div h5{
+.pending-card div i{
+	color: #c0392b;
+	font-size: 24px;
+}
+.pending-card h5{
   font-weight: 600;
-  color: rgb(96, 165, 250);
+  color: #fff;
   font-size: 1.125rem;
 }
 .pending-card div span{
@@ -332,6 +372,17 @@ table tbody tr td span{
   border-radius: 5px;
   padding: 8px 16px;
   background-color: rgb(30, 64, 175);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.pending-card button:hover{
+	transform: scale(1.03);
+}
+.pending-card h3{
+	color: #D1D5DB;
+	margin-top: 5px;
+	font-size: 16px;
+	margin-bottom: 10px;
 }
 .pending h2{
 	margin-bottom: 20px;
@@ -361,7 +412,7 @@ table tbody tr td span{
 	align-items: center;
 }
 .refresh{
-	font-size: 24px;
+	font-size: 18px;
 	color: #fff ;
 	cursor: pointer;
 	transition: all 0.3s ease;
@@ -593,7 +644,6 @@ table tbody tr td span{
     cursor: pointer;
     color: #fff;
 }
-
 .popup.agregarCliente{
 	display: flex;
 	align-items: center;
@@ -798,6 +848,7 @@ table tbody tr td span{
 	border-radius: 8px;
 	gap: 10px;
 	margin-bottom: 20px;
+	border: 1px solid rgb(75, 85, 99);
 }
 .popup.verCliente .client-data div{
 	display: flex;
@@ -865,6 +916,7 @@ table tbody tr td span{
 	display: flex;
 	gap: 5px;
 	align-items: center;
+	margin-bottom: 10px;
 }
 .popup.verCliente .last-payments-title i{
 	color: rgb(96, 165, 250);
@@ -872,7 +924,7 @@ table tbody tr td span{
 }
 .popup.verCliente .last-payments-title span{
 	color: #fff;
-    font-size: 1.25rem;
+    font-size: 18px;
     font-weight: 600;
 }
 .popup.verCliente .client-payments-cont{
@@ -881,6 +933,7 @@ table tbody tr td span{
 	background-color: #1f2a38;
 	border-radius: 8px;
 	padding: 16px;
+	border: 1px solid rgb(75, 85, 99);
 }
 .popup.verCliente .client-payments-cont div{
 	display: flex;
@@ -899,4 +952,80 @@ table tbody tr td span{
 	text-align: center;
 	color: #fff;
 	margin-bottom: 40px;
+}
+.btn{
+	background-color: rgb(29, 78, 216);
+	border: none;
+	padding: 8px 16px;
+	font-size: 14px;
+	border-radius: 8px;
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	color: #fff;
+	cursor: pointer;
+	justify-content: center;
+	transition: all 0.3s ease;
+}
+.btn:hover{
+	opacity: 0.8;
+}
+.renewal-membership-cont{
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+	background: linear-gradient(to right, #1f2937, #374151);
+	padding: 24px;
+	border: 1px solid rgb(75, 85, 99);
+	gap: 10px;
+	margin-bottom: 20px;
+}
+.renewal-title{
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	margin-bottom: 10px;
+}
+.renewal-title i{
+	color: rgb(96, 165, 250);
+	font-size: 18px;
+}
+.renewal-title h5{
+	font-weight: 600;
+	color: #fff;
+	font-size: 18px;
+}
+.renewal-input{
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+.renewal-input input{
+	width: 100%;
+	border: 1px solid rgb(75, 85, 99);
+	padding: 0.5rem 0.75rem;
+	font-size: 0.875rem;
+	color: #fff;
+	border-radius: 5px;
+	background: #374152;
+}
+.renewal-input span{
+	color: #fff;
+	font-size: 14px;
+	font-weight: 500;
+}
+.renewal-checks{
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+.renewal-checks label{
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+.renewal-checks label span{
+	color: #fff;
+	font-size: 14px;
+	font-weight: 500;
 }

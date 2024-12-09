@@ -7,6 +7,7 @@ import {
   AgregarClientePopup,
   EditarClientePopup,
   VerClientePopup,
+  AsignarPagoPopup,
 } from "./popups";
 import Modal from "./modalBkg";
 
@@ -34,8 +35,21 @@ function Nav() {
       </div>
       <div className="nav-card">
         <h4>Resumen</h4>
-        <p>Total Clientes: 175</p>
-        <p>Pagos Pendientes: 8</p>
+        <p>Total Clientes: 57</p>
+        <p>Membresías Expiradas: 6</p>
+      </div>
+      <div className="nav-card">
+        <h4>Expirados</h4>
+        <p>Carlos López</p>
+        <p>Juan Romero</p>
+        <p>Sofía García</p>
+        <p>Ramon Alés</p>
+        <p>Carlos Martínez</p>
+        <p>Jose Gomez</p>
+      </div>
+      <div className="nav-card">
+        <h4>Inactivos (1 mes)</h4>
+        <p>Pablo Pablin</p>
       </div>
     </div>
   );
@@ -70,7 +84,10 @@ function Site() {
             />
           }
         />
-        <Route path="/payments" element={<Payments />} />
+        <Route
+          path="/payments"
+          element={<Payments toggleModal={toggleModal} />}
+        />
       </Routes>
 
       <Modal
@@ -101,6 +118,12 @@ function Site() {
               client={selectedClient}
             />
           )
+        }
+      />
+      <Modal
+        id="asignarPago"
+        content={
+          <AsignarPagoPopup toggleModal={() => toggleModal("asignarPago")} />
         }
       />
     </section>

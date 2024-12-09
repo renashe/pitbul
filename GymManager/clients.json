@@ -16,1283 +16,195 @@
     "state": 12
   },
   {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
+    "name": "Mariana López",
+    "dni": "31254329",
+    "phone": "1147853265",
+    "membership": "Premium",
+    "state": 5,
+    "membershipStartDate": "2023-10-01T00:00:00Z"
   },
   {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
+    "name": "Carlos Martínez",
+    "dni": "45123487",
+    "phone": "1167894321",
     "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
+    "state": 3,
+    "membershipStartDate": "2022-08-20T00:00:00Z"
   },
   {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
+    "name": "Sofía García",
+    "dni": "41235678",
+    "phone": "1198765432",
     "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
+    "state": 8,
+    "membershipStartDate": "2021-07-15T00:00:00Z"
   },
   {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
+    "name": "Julián Álvarez",
+    "dni": "34127854",
+    "phone": "1123654789",
+    "membership": "Premium",
+    "state": 1,
+    "membershipStartDate": "2023-05-10T00:00:00Z"
   },
   {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
+    "name": "Fernanda Torres",
+    "dni": "29123487",
+    "phone": "1134598765",
     "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
+    "state": 4,
+    "membershipStartDate": "2020-11-25T00:00:00Z"
   },
   {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
+    "name": "Roberto Sánchez",
+    "dni": "42234679",
+    "phone": "1187543621",
     "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
+    "state": 9,
+    "membershipStartDate": "2024-01-15T00:00:00Z"
   },
   {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
+    "name": "Ana Ramírez",
+    "dni": "30127654",
+    "phone": "1165432987",
+    "membership": "Premium",
+    "state": 6,
+    "membershipStartDate": "2023-03-18T00:00:00Z"
   },
   {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
+    "name": "Tomás Pérez",
+    "dni": "40239845",
+    "phone": "1178345612",
     "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
+    "state": 7,
+    "membershipStartDate": "2021-12-22T00:00:00Z"
   },
   {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
+    "name": "Luisa Fernández",
+    "dni": "39482372",
+    "phone": "1145298765",
+    "membership": "Premium",
+    "state": 10,
+    "membershipStartDate": "2022-01-11T00:00:00Z"
   },
   {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
+    "name": "Martín Reyes",
+    "dni": "38376543",
+    "phone": "1121234567",
     "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
+    "state": 11,
+    "membershipStartDate": "2023-09-09T00:00:00Z"
   },
   {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
+    "name": "Valeria Delgado",
+    "dni": "27654312",
+    "phone": "1198765432",
     "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
+    "state": 13,
+    "membershipStartDate": "2021-02-20T00:00:00Z"
   },
   {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
+    "name": "Jorge Morales",
+    "dni": "43892765",
+    "phone": "1187624938",
+    "membership": "Premium",
+    "state": 15,
+    "membershipStartDate": "2022-07-03T00:00:00Z"
   },
   {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
+    "name": "Gabriela Soto",
+    "dni": "52938472",
+    "phone": "1146792389",
     "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
+    "state": 14,
+    "membershipStartDate": "2020-05-17T00:00:00Z"
   },
   {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
+    "name": "Felipe González",
+    "dni": "52734893",
+    "phone": "1165423498",
     "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
+    "state": 16,
+    "membershipStartDate": "2019-10-05T00:00:00Z"
   },
   {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
+    "name": "Camila Díaz",
+    "dni": "37482910",
+    "phone": "1178897654",
+    "membership": "Premium",
+    "state": 18,
+    "membershipStartDate": "2022-11-01T00:00:00Z"
   },
   {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
+    "name": "Enrique Castro",
+    "dni": "41387653",
+    "phone": "1123431234",
     "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
+    "state": 19,
+    "membershipStartDate": "2023-02-27T00:00:00Z"
   },
   {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
+    "name": "Valeria Núñez",
+    "dni": "34628755",
+    "phone": "1167885421",
+    "membership": "Premium",
+    "state": 17,
+    "membershipStartDate": "2021-06-12T00:00:00Z"
   },
   {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
+    "name": "Diana Vázquez",
+    "dni": "38592741",
+    "phone": "1173412458",
     "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
+    "state": 20,
+    "membershipStartDate": "2022-09-15T00:00:00Z"
   },
   {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
+    "name": "Alberto Jiménez",
+    "dni": "32987456",
+    "phone": "1146587324",
+    "membership": "Premium",
+    "state": 21,
+    "membershipStartDate": "2023-04-20T00:00:00Z"
   },
   {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
+    "name": "Samuel López",
+    "dni": "49018765",
+    "phone": "1125896321",
     "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
+    "state": 22,
+    "membershipStartDate": "2024-03-01T00:00:00Z"
   },
   {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
+    "name": "Marta Cruz",
+    "dni": "40123456",
+    "phone": "1134521089",
+    "membership": "Premium",
+    "state": 23,
+    "membershipStartDate": "2022-04-15T00:00:00Z"
   },
   {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
+    "name": "Diego Ramírez",
+    "dni": "39876541",
+    "phone": "1174321098",
     "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
+    "state": 24,
+    "membershipStartDate": "2021-11-05T00:00:00Z"
   },
   {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
+    "name": "Nora Martínez",
+    "dni": "30456789",
+    "phone": "1198765432",
+    "membership": "Premium",
+    "state": 25,
+    "membershipStartDate": "2022-06-03T00:00:00Z"
   },
   {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
+    "name": "Fernando Díaz",
+    "dni": "38765432",
+    "phone": "1189876543",
     "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
+    "state": 26,
+    "membershipStartDate": "2023-08-20T00:00:00Z"
   }
 ]

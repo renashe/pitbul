@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-function Payments() {
+function Payments({ toggleModal }) {
   return (
     <div className="payments">
       <div className="client-table cards-bkg">
         <div className="client-title">
           <h2>Lista de Pagos</h2>
-          <button type="submit">
+          <button onClick={() => toggleModal("asignarPago")} type="submit">
             <p>Asignar Pago</p>
             <i className="ri-sticky-note-add-line"></i>
           </button>
@@ -19,18 +19,16 @@ function Payments() {
           />
           <i className="ri-search-line"></i>
         </div>
-        <table cellPadding="4" cellSpacing="0">
-          <thead>
-            <tr>
-              <th>Cliente</th>
-              <th>DNI</th>
-              <th>Monto</th>
-              <th>Fecha</th>
-              <th>Próxima Renovación</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
+        <div className="table pay">
+          <div className="table-head pay">
+            <p>Cliente</p>
+            <p>DNI</p>
+            <p>Monto</p>
+            <p>Fecha</p>
+            <p>Próxima Renovación</p>
+            <p></p>
+          </div>
+          <div className="table-body pay">
             {[
               {
                 name: "Ana García",
@@ -56,34 +54,60 @@ function Payments() {
                 renewal: "Renovación requerida",
                 renewalClass: "red",
               },
+              {
+                name: "Pablo Aimar",
+                dni: "40482123",
+                amount: "$12.000",
+                date: "2024/10/14",
+                renewal: "Renueva en 6 días",
+                renewalClass: "yellow",
+              },
+              {
+                name: "Juan Romero",
+                dni: "29424820",
+                amount: "$11.500",
+                date: "2024/02/14",
+                renewal: "Renueva en 12 días",
+                renewalClass: "green",
+              },
+              {
+                name: "Mariana López",
+                dni: "28134232",
+                amount: "$11.500",
+                date: "2024/02/14",
+                renewal: "Renovación requerida",
+                renewalClass: "red",
+              },
             ].map((payment, index) => (
-              <tr key={index}>
-                <td>{payment.name}</td>
-                <td>{payment.dni}</td>
-                <td>{payment.amount}</td>
-                <td>{payment.date}</td>
-                <td>
-                  <span className={`renovation ${payment.renewalClass}`}>
-                    {payment.renewal}
-                  </span>
-                </td>
-                <td>
+              <div className="table-body-cont pay" key={index}>
+                <span>{payment.name}</span>
+                <span>{payment.dni}</span>
+                <span>{payment.amount}</span>
+                <span>{payment.date}</span>
+                <span>
+                  <div
+                    className={`client-state renewal-payx ${payment.renewalClass}`}
+                  >
+                    <p className="renewal-pay">{payment.renewal}</p>
+                  </div>
+                </span>
+                <span>
                   <div className="table-actions">
                     <i className="ri-id-card-line"></i>
                     <i className="ri-edit-line"></i>
                     <i className="ri-delete-bin-line delete"></i>
                   </div>
-                </td>
-              </tr>
+                </span>
+              </div>
             ))}
-          </tbody>
-        </table>
-        <p className="advice">Esta lista se borrará cada 4 meses</p>
+          </div>
+        </div>
+        <p className="advice">Esta lista se borrará cada 1 mes</p>
       </div>
       <div className="payments-info-cont">
         <div className="payment-history cards-bkg">
           <h2>Historial de Pagos Recientes</h2>
-          <div className="history-list">
+          <div className="history-list scrollable">
             {[...Array(12)].map((_, i) => (
               <div className="history-card">
                 <div className="history-card-first">

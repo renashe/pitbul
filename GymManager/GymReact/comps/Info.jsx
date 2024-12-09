@@ -53,10 +53,7 @@ function Info({ toggleModal, onViewClient, onEditClient }) {
           <h2>Lista de Clientes</h2>
           <div>
             <i className="ri-refresh-line refresh" onClick={refreshClients}></i>
-            <button
-              onClick={() => toggleModal("agregarCliente")}
-              className="buttonclassic open crearCliente"
-            >
+            <button onClick={() => toggleModal("agregarCliente")}>
               <p>Agregar Cliente</p>
               <i className="ri-add-circle-line"></i>
             </button>
@@ -79,7 +76,7 @@ function Info({ toggleModal, onViewClient, onEditClient }) {
             <p></p>
           </div>
           <div className="table-body">
-            {clients.slice(0, 6).map((client, index) => (
+            {clients.map((client, index) => (
               <div className="table-body-cont" key={index}>
                 <span>{client.name}</span>
                 <span>{client.dni}</span>
@@ -115,14 +112,39 @@ function Info({ toggleModal, onViewClient, onEditClient }) {
 
       <div className="cards-bkg">
         <div className="pending">
-          <h2>Pagos Pendientes</h2>
+          <h2>Membresías Expiradas</h2>
           <div className="pending-card-cont">
             <div className="pending-card">
+              <h5>Carlos López</h5>
+              <h3>45125563</h3>
               <div>
-                <h5>Carlos López</h5>
-                <span>2 días</span>
+                <i class="ri-calendar-close-line"></i>
+                <p>
+                  Membresía vencida el: <span>2024/7/12</span>
+                </p>
               </div>
-              <p>Debe pagar</p>
+              <button>Gestionar</button>
+            </div>
+            <div className="pending-card">
+              <h5>Juan Romero</h5>
+              <h3>38323812</h3>
+              <div>
+                <i class="ri-calendar-close-line"></i>
+                <p>
+                  Membresía vencida el: <span>2024/28/11</span>
+                </p>
+              </div>
+              <button>Gestionar</button>
+            </div>
+            <div className="pending-card">
+              <h5>Sofía García</h5>
+              <h3>41235678</h3>
+              <div>
+                <i class="ri-calendar-close-line"></i>
+                <p>
+                  Membresía vencida el: <span>2024/4/12</span>
+                </p>
+              </div>
               <button>Gestionar</button>
             </div>
           </div>

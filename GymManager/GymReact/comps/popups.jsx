@@ -8,8 +8,8 @@ export function AgregarClientePopup({ toggleModal }) {
     dni: "",
     phone: "",
     membership: "",
-    membershipStartDate: "", // Agregado: para la fecha de inicio de la membresía
-    state: 0, // Inicializamos 'state' como 0
+    membershipStartDate: "",
+    state: 0,
   });
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
@@ -339,21 +339,42 @@ export function VerClientePopup({ toggleModal, client }) {
       <div className="renovation-cont">
         <div className={`renovation-card ${getDaysToRenewClass(daysToRenew)}`}>
           <div>
-            <i className="ri-calendar-line"></i>
-            <p>Renovación de Membresía</p>
+            <i class="ri-calendar-schedule-line"></i>
+            <p>Fecha de Membresía</p>
           </div>
           <span>{daysToRenew} días</span>
           <h5>hasta la próxima renovación</h5>
         </div>
         <div className={`renovation-card ${getStateClass(client.state)}`}>
           <div>
-            <i className="ri-calendar-line"></i>
+            <i class="ri-coupon-line"></i>
             <p>Ingresos Restantes</p>
           </div>
           <span>{client.state}</span>
           <h5>ingresos disponibles</h5>
         </div>
       </div>
+      <div className="renewal-title">
+        <i class="ri-calendar-check-line"></i>
+        <h5>Renovar Membresía</h5>
+      </div>
+      <form className="renewal-membership-cont">
+        <div className="renewal-input">
+          <span>Precio:</span>
+          <input type="numer" name="precio"></input>
+        </div>
+        <div className="renewal-checks">
+          <label>
+            <input type="radio" name="choice"></input>
+            <span>Normal</span>
+          </label>
+          <label>
+            <input type="radio" name="choice"></input>
+            <span>Libre</span>
+          </label>
+        </div>
+        <button className="btn">Confirmar Renovación</button>
+      </form>
       <div className="last-payments-title">
         <i className="ri-money-dollar-box-line"></i>
         <span>Últimos pagos</span>
@@ -372,6 +393,76 @@ export function VerClientePopup({ toggleModal, client }) {
           </div>
         )}
       </div>
+    </div>
+  );
+}
+
+export function AsignarPagoPopup({ toggleModal }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("");
+  const options = ["Normal", "Libre"];
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <div className="popup agregarCliente">
+      <span className="close" onClick={() => toggleModal(null)}>
+        <i className="ri-close-line"></i>
+      </span>
+      <h5>Asignar Pago</h5>
+
+      <div className="input-cont">
+        <div>
+          <i className="ri-info-card-line"></i>
+          <p>DNI</p>
+        </div>
+        <input type="number" name="dni" placeholder="Ingrese DNI" />
+      </div>
+      <div className="input-cont">
+        <div>
+          <i className="ri-price-tag-3-line"></i>
+          <p>Precio</p>
+        </div>
+        <input type="number" name="price" placeholder="Ingrese precio" />
+      </div>
+      <div className="input-cont">
+        <div>
+          <i class="ri-calendar-2-line"></i>
+          <p>Fecha</p>
+        </div>
+        <input type="text" name="fecha" />
+      </div>
+      <div className="input-cont">
+        <div>
+          <i className="ri-medal-line"></i>
+          <p>Membresía</p>
+        </div>
+        <div className="custom-select">
+          <button
+            className="custom-select-trigger"
+            onClick={toggleDropdown}
+            aria-expanded={isOpen}
+          >
+            {selectedOption || "Seleccione una opción"}
+          </button>
+          {isOpen && (
+            <ul className="custom-select-options">
+              {options.map((option, index) => (
+                <li
+                  key={index}
+                  className="custom-select-option"
+                  onClick={() => handleOptionClick(option)}
+                >
+                  {option}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+
+      <button className="add-client-btn">Asignar</button>
     </div>
   );
 }
