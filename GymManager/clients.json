@@ -1,210 +1,228 @@
 [
   {
-    "name": "Pablo Aimar",
-    "dni": "41242328",
-    "phone": "1124424515",
-    "membership": "Normal",
-    "state": 2,
-    "membershipStartDate": "2024-11-15T00:00:00Z"
-  },
-  {
-    "name": "Juan Romero",
-    "dni": "38323812",
-    "phone": "1123874123",
-    "membership": "Normal",
-    "membershipStartDate": "2024-12-05T03:38:25.048Z",
-    "state": 12
-  },
-  {
-    "name": "Mariana López",
-    "dni": "31254329",
-    "phone": "1147853265",
-    "membership": "Premium",
-    "state": 5,
-    "membershipStartDate": "2023-10-01T00:00:00Z"
-  },
-  {
-    "name": "Carlos Martínez",
-    "dni": "45123487",
-    "phone": "1167894321",
-    "membership": "Normal",
-    "state": 3,
-    "membershipStartDate": "2022-08-20T00:00:00Z"
-  },
-  {
-    "name": "Sofía García",
-    "dni": "41235678",
-    "phone": "1198765432",
-    "membership": "Normal",
-    "state": 8,
-    "membershipStartDate": "2021-07-15T00:00:00Z"
-  },
-  {
-    "name": "Julián Álvarez",
-    "dni": "34127854",
-    "phone": "1123654789",
-    "membership": "Premium",
-    "state": 1,
-    "membershipStartDate": "2023-05-10T00:00:00Z"
-  },
-  {
-    "name": "Fernanda Torres",
-    "dni": "29123487",
-    "phone": "1134598765",
-    "membership": "Normal",
-    "state": 4,
-    "membershipStartDate": "2020-11-25T00:00:00Z"
-  },
-  {
-    "name": "Roberto Sánchez",
-    "dni": "42234679",
-    "phone": "1187543621",
-    "membership": "Normal",
-    "state": 9,
-    "membershipStartDate": "2024-01-15T00:00:00Z"
-  },
-  {
-    "name": "Ana Ramírez",
-    "dni": "30127654",
-    "phone": "1165432987",
-    "membership": "Premium",
-    "state": 6,
-    "membershipStartDate": "2023-03-18T00:00:00Z"
-  },
-  {
-    "name": "Tomás Pérez",
-    "dni": "40239845",
-    "phone": "1178345612",
-    "membership": "Normal",
-    "state": 7,
-    "membershipStartDate": "2021-12-22T00:00:00Z"
-  },
-  {
-    "name": "Luisa Fernández",
-    "dni": "39482372",
-    "phone": "1145298765",
-    "membership": "Premium",
-    "state": 10,
-    "membershipStartDate": "2022-01-11T00:00:00Z"
-  },
-  {
-    "name": "Martín Reyes",
-    "dni": "38376543",
-    "phone": "1121234567",
-    "membership": "Normal",
-    "state": 11,
-    "membershipStartDate": "2023-09-09T00:00:00Z"
-  },
-  {
-    "name": "Valeria Delgado",
-    "dni": "27654312",
-    "phone": "1198765432",
-    "membership": "Normal",
-    "state": 13,
-    "membershipStartDate": "2021-02-20T00:00:00Z"
-  },
-  {
-    "name": "Jorge Morales",
-    "dni": "43892765",
-    "phone": "1187624938",
-    "membership": "Premium",
-    "state": 15,
-    "membershipStartDate": "2022-07-03T00:00:00Z"
-  },
-  {
-    "name": "Gabriela Soto",
-    "dni": "52938472",
-    "phone": "1146792389",
-    "membership": "Normal",
-    "state": 14,
-    "membershipStartDate": "2020-05-17T00:00:00Z"
-  },
-  {
-    "name": "Felipe González",
-    "dni": "52734893",
-    "phone": "1165423498",
-    "membership": "Normal",
-    "state": 16,
-    "membershipStartDate": "2019-10-05T00:00:00Z"
-  },
-  {
-    "name": "Camila Díaz",
-    "dni": "37482910",
-    "phone": "1178897654",
-    "membership": "Premium",
-    "state": 18,
-    "membershipStartDate": "2022-11-01T00:00:00Z"
-  },
-  {
-    "name": "Enrique Castro",
-    "dni": "41387653",
-    "phone": "1123431234",
-    "membership": "Normal",
-    "state": 19,
-    "membershipStartDate": "2023-02-27T00:00:00Z"
-  },
-  {
-    "name": "Valeria Núñez",
-    "dni": "34628755",
-    "phone": "1167885421",
-    "membership": "Premium",
-    "state": 17,
-    "membershipStartDate": "2021-06-12T00:00:00Z"
-  },
-  {
-    "name": "Diana Vázquez",
-    "dni": "38592741",
-    "phone": "1173412458",
-    "membership": "Normal",
-    "state": 20,
-    "membershipStartDate": "2022-09-15T00:00:00Z"
-  },
-  {
-    "name": "Alberto Jiménez",
-    "dni": "32987456",
-    "phone": "1146587324",
-    "membership": "Premium",
-    "state": 21,
-    "membershipStartDate": "2023-04-20T00:00:00Z"
-  },
-  {
-    "name": "Samuel López",
-    "dni": "49018765",
-    "phone": "1125896321",
-    "membership": "Normal",
-    "state": 22,
-    "membershipStartDate": "2024-03-01T00:00:00Z"
-  },
-  {
-    "name": "Marta Cruz",
-    "dni": "40123456",
-    "phone": "1134521089",
-    "membership": "Premium",
-    "state": 23,
-    "membershipStartDate": "2022-04-15T00:00:00Z"
-  },
-  {
-    "name": "Diego Ramírez",
-    "dni": "39876541",
-    "phone": "1174321098",
+    "name": "Joaquín Gomez",
+    "dni": "44123516",
+    "phone": "1145125623",
     "membership": "Normal",
     "state": 24,
-    "membershipStartDate": "2021-11-05T00:00:00Z"
+    "currentPayment": {
+      "amount": "5000",
+      "date": "2024-12-02"
+    },
+    "previousPayment": null,
+    "monthlyPayments": 14000,
+    "globalPayments": 14000
   },
   {
-    "name": "Nora Martínez",
-    "dni": "30456789",
-    "phone": "1198765432",
-    "membership": "Premium",
-    "state": 25,
-    "membershipStartDate": "2022-06-03T00:00:00Z"
+    "name": "Ana María Pérez",
+    "dni": "15234678",
+    "phone": "1156324789",
+    "membership": "Libre",
+    "state": 18,
+    "currentPayment": {
+      "amount": "12000",
+      "date": "2024-12-29"
+    },
+    "previousPayment": {
+      "amount": "10000",
+      "date": "2024-11-15"
+    },
+    "monthlyPayments": 12000,
+    "globalPayments": 22000
   },
   {
-    "name": "Fernando Díaz",
-    "dni": "38765432",
-    "phone": "1189876543",
+    "name": "Carlos García",
+    "dni": "38572694",
+    "phone": "1123568745",
     "membership": "Normal",
-    "state": 26,
-    "membershipStartDate": "2023-08-20T00:00:00Z"
+    "state": 24,
+    "currentPayment": {
+      "amount": "4500",
+      "date": "2024-12-20"
+    },
+    "previousPayment": null,
+    "monthlyPayments": 4500,
+    "globalPayments": 8500
+  },
+  {
+    "name": "Luis Fernández",
+    "dni": "25874139",
+    "phone": "1147321789",
+    "membership": "Libre",
+    "state": 7,
+    "currentPayment": {
+      "amount": "3000",
+      "date": "2024-12-30"
+    },
+    "previousPayment": {
+      "amount": "2500",
+      "date": "2024-11-25"
+    },
+    "monthlyPayments": 3000,
+    "globalPayments": 5500
+  },
+  {
+    "name": "María López",
+    "dni": "44789261",
+    "phone": "1139845671",
+    "membership": "Normal",
+    "state": 10,
+    "currentPayment": {
+      "amount": "5000",
+      "date": "2025-01-04"
+    },
+    "previousPayment": {
+      "amount": "15000",
+      "date": "2024-12-15"
+    },
+    "monthlyPayments": 20000,
+    "globalPayments": 34000
+  },
+  {
+    "name": "Jorge Martínez",
+    "dni": "19875432",
+    "phone": "1168271902",
+    "membership": "Normal",
+    "state": 12,
+    "currentPayment": {
+      "amount": "3500",
+      "date": "2024-12-01"
+    },
+    "previousPayment": null,
+    "monthlyPayments": 3500,
+    "globalPayments": 6500
+  },
+  {
+    "name": "Cecilia Ramírez",
+    "dni": "50123784",
+    "phone": "1157631890",
+    "membership": "Libre",
+    "state": 15,
+    "currentPayment": {
+      "amount": "10500",
+      "date": "2024-12-18"
+    },
+    "previousPayment": {
+      "amount": "9500",
+      "date": "2024-10-30"
+    },
+    "monthlyPayments": 10500,
+    "globalPayments": 20000
+  },
+  {
+    "name": "Martín Sánchez",
+    "dni": "54287613",
+    "phone": "1189564321",
+    "membership": "Normal",
+    "state": 11,
+    "currentPayment": {
+      "amount": "4700",
+      "date": "2024-12-10"
+    },
+    "previousPayment": {
+      "amount": "4200",
+      "date": "2024-11-03"
+    },
+    "monthlyPayments": 4700,
+    "globalPayments": 8900
+  },
+  {
+    "name": "Patricia Rodríguez",
+    "dni": "32987456",
+    "phone": "1129056789",
+    "membership": "Libre",
+    "state": 23,
+    "currentPayment": {
+      "amount": "20000",
+      "date": "2024-12-12"
+    },
+    "previousPayment": {
+      "amount": "19000",
+      "date": "2024-11-20"
+    },
+    "monthlyPayments": 20000,
+    "globalPayments": 39000
+  },
+  {
+    "name": "Roberto Díaz",
+    "dni": "15478923",
+    "phone": "1187654321",
+    "membership": "Normal",
+    "state": 12,
+    "currentPayment": {
+      "amount": "6200",
+      "date": "2024-12-05"
+    },
+    "previousPayment": null,
+    "monthlyPayments": 6200,
+    "globalPayments": 11700
+  },
+  {
+    "name": "Lucía Morales",
+    "dni": "34561278",
+    "phone": "1165412789",
+    "membership": "Libre",
+    "state": 9,
+    "currentPayment": {
+      "amount": "13000",
+      "date": "2024-12-19"
+    },
+    "previousPayment": {
+      "amount": "11000",
+      "date": "2024-10-12"
+    },
+    "monthlyPayments": 13000,
+    "globalPayments": 24000
+  },
+  {
+    "name": "Carlos Benítez",
+    "dni": "78126453",
+    "phone": "1135342089",
+    "membership": "Normal",
+    "state": 6,
+    "currentPayment": {
+      "amount": "2800",
+      "date": "2024-12-25"
+    },
+    "previousPayment": {
+      "amount": "2700",
+      "date": "2024-11-05"
+    },
+    "monthlyPayments": 2800,
+    "globalPayments": 5500
+  },
+  {
+    "name": "Martín García",
+    "dni": "89123674",
+    "phone": "1164972325",
+    "membership": "Libre",
+    "state": 10,
+    "currentPayment": {
+      "amount": "14500",
+      "date": "2024-12-22"
+    },
+    "previousPayment": {
+      "amount": "13000",
+      "date": "2024-11-07"
+    },
+    "monthlyPayments": 14500,
+    "globalPayments": 27500
+  },
+  {
+    "name": "Rodrigo Mora",
+    "dni": "38427192",
+    "phone": "1184129128",
+    "membership": "Normal",
+    "state": 12,
+    "currentPayment": {
+      "amount": "4444",
+      "date": "2024-10-09"
+    },
+    "previousPayment": {
+      "amount": null,
+      "date": null
+    },
+    "monthlyPayments": 4444,
+    "globalPayments": 4444
   }
 ]

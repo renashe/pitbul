@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { parseISO, differenceInDays } from "date-fns";
 
 export function AgregarClientePopup({ toggleModal }) {
   const [client, setClient] = useState({
@@ -8,7 +7,6 @@ export function AgregarClientePopup({ toggleModal }) {
     dni: "",
     phone: "",
     membership: "",
-    membershipStartDate: "",
     state: 0,
   });
   const [isOpen, setIsOpen] = useState(false);
@@ -23,15 +21,16 @@ export function AgregarClientePopup({ toggleModal }) {
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     const today = new Date();
+
+    const formattedDate = today.toISOString().split("T")[0];
+
     setClient((prev) => ({
       ...prev,
       membership: option,
       state: option === "Libre" ? 24 : 12,
-      membershipStartDate: today.toISOString(), // Asignamos la fecha actual como fecha de inicio
     }));
     setIsOpen(false);
   };
-
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -275,11 +274,13 @@ export function EditarClientePopup({ toggleModal, client }) {
 
 export function VerClientePopup({ toggleModal, client }) {
   const today = new Date();
+  const currentPaymentDate = new Date(client.currentPayment?.date);
 
-  const membershipStartDate = parseISO(client.membershipStartDate);
+  const diffInMilliseconds = today - currentPaymentDate;
+  const diffInDays = diffInMilliseconds / (1000 * 3600 * 24);
+  const diffInDaysInt = Math.floor(diffInDays);
 
-  const daysSinceStart = differenceInDays(today, membershipStartDate);
-  const daysToRenew = 30 - (daysSinceStart % 30);
+  const daysToRenew = diffInDaysInt >= 30 ? 0 : 30 - (diffInDaysInt % 30);
 
   const getStateClass = (state) => {
     if (state <= 3) {
@@ -290,6 +291,7 @@ export function VerClientePopup({ toggleModal, client }) {
       return "green";
     }
   };
+
   const getDaysToRenewClass = (days) => {
     if (days <= 3) {
       return "red";
@@ -339,15 +341,15 @@ export function VerClientePopup({ toggleModal, client }) {
       <div className="renovation-cont">
         <div className={`renovation-card ${getDaysToRenewClass(daysToRenew)}`}>
           <div>
-            <i class="ri-calendar-schedule-line"></i>
-            <p>Fecha de Membresía</p>
+            <i className="ri-calendar-schedule-line"></i>
+            <p>Fecha del Pago Actual</p>
           </div>
           <span>{daysToRenew} días</span>
           <h5>hasta la próxima renovación</h5>
         </div>
         <div className={`renovation-card ${getStateClass(client.state)}`}>
           <div>
-            <i class="ri-coupon-line"></i>
+            <i className="ri-coupon-line"></i>
             <p>Ingresos Restantes</p>
           </div>
           <span>{client.state}</span>
@@ -355,13 +357,13 @@ export function VerClientePopup({ toggleModal, client }) {
         </div>
       </div>
       <div className="renewal-title">
-        <i class="ri-calendar-check-line"></i>
+        <i className="ri-calendar-check-line"></i>
         <h5>Renovar Membresía</h5>
       </div>
       <form className="renewal-membership-cont">
         <div className="renewal-input">
           <span>Precio:</span>
-          <input type="numer" name="precio"></input>
+          <input type="number" name="precio"></input>
         </div>
         <div className="renewal-checks">
           <label>
@@ -380,17 +382,49 @@ export function VerClientePopup({ toggleModal, client }) {
         <span>Últimos pagos</span>
       </div>
       <div className="client-payments-cont">
-        {client.payments && client.payments.length > 0 ? (
-          client.payments.map((payment, index) => (
-            <div key={index}>
-              <p>{payment.date}</p>
-              <span>${payment.amount}</span>
+        {/* Mostrar el pago actual */}
+        {client.currentPayment && (
+          <div className="client-payments-struct">
+            <div className="client-payments-date">
+              <div className="circle lightblue"></div>
+              <div>
+                <p>Actual</p>
+                <span>
+                  {client.currentPayment.date || "Fecha no disponible"}
+                </span>
+              </div>
             </div>
-          ))
-        ) : (
-          <div>
-            <p>No hay pagos registrados</p>
+            <div className="client-payments-amount">
+              <span>
+                ${client.currentPayment.amount || "Monto no disponible"}
+              </span>
+              <h4>Renovación Membresía</h4>
+            </div>
           </div>
+        )}
+
+        {client.previousPayment?.date && client.previousPayment?.amount && (
+          <div className="client-payments-struct">
+            <div className="client-payments-date">
+              <div className="circle gray"></div>
+              <div>
+                <p>Previo</p>
+                <span>
+                  {client.previousPayment.date || "Fecha no disponible"}
+                </span>
+              </div>
+            </div>
+            <div className="client-payments-amount">
+              <span>
+                ${client.previousPayment.amount || "Monto no disponible"}
+              </span>
+              <h4>Renovación Membresía</h4>
+            </div>
+          </div>
+        )}
+
+        {!client.currentPayment && !client.previousPayment && (
+          <p className="error">No hay pagos registrados.</p>
         )}
       </div>
     </div>
@@ -398,15 +432,70 @@ export function VerClientePopup({ toggleModal, client }) {
 }
 
 export function AsignarPagoPopup({ toggleModal }) {
+  const [dni, setDni] = useState("");
+  const [priceAmount, setPriceAmount] = useState("");
+  const [paymentDate, setPaymentDate] = useState(
+    new Date().toISOString().split("T")[0]
+  ); // Fecha seleccionada por el usuario
+  const [membership, setMembership] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("");
   const options = ["Normal", "Libre"];
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleOptionClick = (option) => {
+    setMembership(option);
+    setIsOpen(false);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    let newIncome;
+    if (membership === "Normal") {
+      newIncome = 12;
+    } else if (membership === "Libre") {
+      newIncome = 24;
+    }
+
+    const payload = {
+      priceAmount,
+      membership,
+      paymentDate,
+      state: newIncome,
+    };
+
+    try {
+      const response = await fetch(
+        `http://localhost:3001/api/clients/${dni}/assign-payment`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        alert(`Error: ${errorData.error}`);
+        return;
+      }
+
+      const data = await response.json();
+      alert("Pago asignado correctamente");
+      toggleModal(null); // Cierra el popup
+    } catch (error) {
+      console.error("Error al asignar pago:", error);
+      alert("Hubo un error al asignar el pago");
+    }
+  };
+
   return (
-    <div className="popup agregarCliente">
+    <form className="popup agregarCliente" onSubmit={handleSubmit}>
       <span className="close" onClick={() => toggleModal(null)}>
         <i className="ri-close-line"></i>
       </span>
@@ -417,21 +506,41 @@ export function AsignarPagoPopup({ toggleModal }) {
           <i className="ri-info-card-line"></i>
           <p>DNI</p>
         </div>
-        <input type="number" name="dni" placeholder="Ingrese DNI" />
+        <input
+          type="number"
+          name="dni"
+          placeholder="Ingrese DNI"
+          value={dni}
+          onChange={(e) => setDni(e.target.value)}
+          required
+        />
       </div>
       <div className="input-cont">
         <div>
           <i className="ri-price-tag-3-line"></i>
           <p>Precio</p>
         </div>
-        <input type="number" name="price" placeholder="Ingrese precio" />
+        <input
+          type="number"
+          name="price"
+          placeholder="Ingrese precio"
+          value={priceAmount}
+          onChange={(e) => setPriceAmount(e.target.value)}
+          required
+        />
       </div>
       <div className="input-cont">
         <div>
-          <i class="ri-calendar-2-line"></i>
+          <i className="ri-calendar-2-line"></i>
           <p>Fecha</p>
         </div>
-        <input type="text" name="fecha" />
+        <input
+          type="date"
+          name="fecha"
+          value={paymentDate} // Aquí usamos el valor de paymentDate
+          onChange={(e) => setPaymentDate(e.target.value)}
+          required
+        />
       </div>
       <div className="input-cont">
         <div>
@@ -440,11 +549,12 @@ export function AsignarPagoPopup({ toggleModal }) {
         </div>
         <div className="custom-select">
           <button
+            type="button"
             className="custom-select-trigger"
             onClick={toggleDropdown}
             aria-expanded={isOpen}
           >
-            {selectedOption || "Seleccione una opción"}
+            {membership || "Seleccione una opción"}
           </button>
           {isOpen && (
             <ul className="custom-select-options">
@@ -462,7 +572,9 @@ export function AsignarPagoPopup({ toggleModal }) {
         </div>
       </div>
 
-      <button className="add-client-btn">Asignar</button>
-    </div>
+      <button className="add-client-btn" type="submit">
+        Asignar
+      </button>
+    </form>
   );
 }

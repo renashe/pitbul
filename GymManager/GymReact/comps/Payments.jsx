@@ -1,6 +1,116 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const calculateRenewalStatus = (currentPayment) => {
+  if (!currentPayment || !currentPayment.date) {
+    return { status: "Fecha de pago no disponible", class: "gray" };
+  }
+
+  const today = new Date();
+  const currentPaymentDate = new Date(currentPayment.date);
+  const diffTime = today - currentPaymentDate;
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+  const remainingDays = 30 - diffDays;
+  if (diffDays >= 30) {
+    return { status: "Renovación requerida", class: "red" };
+  } else if (diffDays >= 23 && diffDays < 30) {
+    return { status: `Renueva en ${remainingDays} días`, class: "yellow" };
+  } else if (diffDays < 23) {
+    return { status: `Renueva en ${remainingDays} días`, class: "green" };
+  }
+};
+
+const isWithinLast31Days = (paymentDate) => {
+  const today = new Date();
+  const payment = new Date(paymentDate);
+  const diffTime = today - payment;
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  return diffDays >= 0 && diffDays <= 31;
+};
+
+const getDaysUntilEndOfMonth = () => {
+  const today = new Date();
+  const lastDayOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+  const diffTime = lastDayOfMonth - today;
+  return Math.floor(diffTime / (1000 * 60 * 60 * 24));
+};
 
 function Payments({ toggleModal }) {
+  const [clients, setClients] = useState([]);
+  const [totalMonthlyPayments, setTotalMonthlyPayments] = useState(0);
+  const [totalGlobalPayments, setTotalGlobalPayments] = useState(0);
+  const [daysUntilEndOfMonth, setDaysUntilEndOfMonth] = useState(0);
+
+  useEffect(() => {
+    // Llamar a la función de días restantes hasta el final del mes
+    setDaysUntilEndOfMonth(getDaysUntilEndOfMonth());
+
+    const fetchClients = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/api/clients");
+        const data = await response.json();
+        setClients(data);
+
+        let globalTotal = 0;
+        let monthlyTotal = 0;
+
+        data.forEach((client) => {
+          globalTotal += parseFloat(client.globalPayments || 0);
+          monthlyTotal += parseFloat(client.monthlyPayments || 0);
+        });
+
+        setTotalGlobalPayments(globalTotal);
+        setTotalMonthlyPayments(monthlyTotal);
+      } catch (error) {
+        console.error("Error al obtener los clientes:", error);
+      }
+    };
+
+    fetchClients();
+  }, []);
+
+  const getTopClients = () => {
+    // Ordenar los clientes según globalPayments y tomar los 9 mejores
+    const sortedClients = [...clients]
+      .sort((a, b) => b.globalPayments - a.globalPayments)
+      .slice(0, 9);
+
+    // Rellenar con espacios vacíos si hay menos de 9 clientes
+    while (sortedClients.length < 9) {
+      sortedClients.push({ name: "", dni: "", globalPayments: 0 });
+    }
+
+    return sortedClients;
+  };
+
+  const topClients = getTopClients();
+
+  const handleDeletePayment = async (dni, paymentType) => {
+    try {
+      const response = await fetch(
+        `http://localhost:3001/api/clients/${dni}/delete-payment`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ paymentType }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("No se pudo eliminar el pago");
+      }
+
+      const updatedClient = await response.json();
+      setClients((prevClients) =>
+        prevClients.map((client) =>
+          client.dni === dni ? updatedClient : client
+        )
+      );
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
   return (
     <div className="payments">
       <div className="client-table cards-bkg">
@@ -21,7 +131,7 @@ function Payments({ toggleModal }) {
         </div>
         <div className="table pay">
           <div className="table-head pay">
-            <p>Cliente</p>
+            <p>Nombre</p>
             <p>DNI</p>
             <p>Monto</p>
             <p>Fecha</p>
@@ -29,104 +139,125 @@ function Payments({ toggleModal }) {
             <p></p>
           </div>
           <div className="table-body pay">
-            {[
-              {
-                name: "Ana García",
-                dni: "40482123",
-                amount: "$8.000",
-                date: "2024/11/14",
-                renewal: "Renueva en 2 días",
-                renewalClass: "yellow",
-              },
-              {
-                name: "Carlos López",
-                dni: "29424820",
-                amount: "$9.500",
-                date: "2024/11/14",
-                renewal: "Renueva en 12 días",
-                renewalClass: "green",
-              },
-              {
-                name: "María Rodríguez",
-                dni: "28138902",
-                amount: "$12.500",
-                date: "2024/11/14",
-                renewal: "Renovación requerida",
-                renewalClass: "red",
-              },
-              {
-                name: "Pablo Aimar",
-                dni: "40482123",
-                amount: "$12.000",
-                date: "2024/10/14",
-                renewal: "Renueva en 6 días",
-                renewalClass: "yellow",
-              },
-              {
-                name: "Juan Romero",
-                dni: "29424820",
-                amount: "$11.500",
-                date: "2024/02/14",
-                renewal: "Renueva en 12 días",
-                renewalClass: "green",
-              },
-              {
-                name: "Mariana López",
-                dni: "28134232",
-                amount: "$11.500",
-                date: "2024/02/14",
-                renewal: "Renovación requerida",
-                renewalClass: "red",
-              },
-            ].map((payment, index) => (
-              <div className="table-body-cont pay" key={index}>
-                <span>{payment.name}</span>
-                <span>{payment.dni}</span>
-                <span>{payment.amount}</span>
-                <span>{payment.date}</span>
-                <span>
-                  <div
-                    className={`client-state renewal-payx ${payment.renewalClass}`}
-                  >
-                    <p className="renewal-pay">{payment.renewal}</p>
-                  </div>
-                </span>
-                <span>
-                  <div className="table-actions">
-                    <i className="ri-id-card-line"></i>
-                    <i className="ri-edit-line"></i>
-                    <i className="ri-delete-bin-line delete"></i>
-                  </div>
-                </span>
-              </div>
-            ))}
+            {clients
+              .filter(
+                (client) =>
+                  (client.currentPayment && client.currentPayment.amount) ||
+                  (client.previousPayment &&
+                    isWithinLast31Days(client.previousPayment.date))
+              )
+              .map((client, index) => {
+                const currentRenewal =
+                  client.currentPayment &&
+                  calculateRenewalStatus(client.currentPayment);
+
+                return (
+                  <>
+                    {client.currentPayment && client.currentPayment.amount && (
+                      <div
+                        className="table-body-cont pay"
+                        key={`${client.dni}-current`}
+                      >
+                        <span>{client.name}</span>
+                        <span>{client.dni}</span>
+                        <span>${client.currentPayment.amount}</span>
+                        <span>{client.currentPayment.date}</span>
+                        <span>
+                          <div
+                            className={`client-state renewal-payx ${
+                              currentRenewal?.class || "gray"
+                            }`}
+                          >
+                            <p className="renewal-pay">
+                              {currentRenewal?.status}
+                            </p>
+                          </div>
+                        </span>
+                        <span>
+                          <div className="table-actions">
+                            <i
+                              className="ri-delete-bin-line delete"
+                              onClick={() =>
+                                handleDeletePayment(
+                                  client.dni,
+                                  "currentPayment"
+                                )
+                              }
+                            ></i>
+                          </div>
+                        </span>
+                      </div>
+                    )}
+
+                    {client.previousPayment &&
+                      isWithinLast31Days(client.previousPayment.date) && (
+                        <div
+                          className="table-body-cont pay"
+                          key={`${client.dni}-previous`}
+                        >
+                          <span>{client.name}</span>
+                          <span>{client.dni}</span>
+                          <span>${client.previousPayment.amount}</span>
+                          <span>{client.previousPayment.date}</span>
+                          <span>
+                            <div className={`client-state renewal-payx gray`}>
+                              <p className="renewal-pay">Fecha pasada</p>
+                            </div>
+                          </span>
+                          <span>
+                            <div className="table-actions">
+                              <i
+                                className="ri-delete-bin-line delete"
+                                onClick={() =>
+                                  handleDeletePayment(
+                                    client.dni,
+                                    "previousPayment"
+                                  )
+                                }
+                              ></i>
+                            </div>
+                          </span>
+                        </div>
+                      )}
+                  </>
+                );
+              })}
           </div>
         </div>
-        <p className="advice">Esta lista se borrará cada 1 mes</p>
+        <p className="advice">
+          Esta lista muestra los pagos de los ultimos 31 días
+        </p>
       </div>
       <div className="payments-info-cont">
         <div className="payment-history cards-bkg">
-          <h2>Historial de Pagos Recientes</h2>
+          <h2>Clientes Más Activos</h2>
           <div className="history-list scrollable">
-            {[...Array(12)].map((_, i) => (
-              <div className="history-card">
-                <div className="history-card-first">
-                  <span className="history-icon-bkg">
-                    <i class="ri-file-check-line"></i>
-                  </span>
-                  <div>
-                    <p>Juan Pérez</p>
-                    <span>12345678</span>
+            {topClients
+              .sort((a, b) => b.globalPayments - a.globalPayments)
+              .map((client, i) => (
+                <div className="history-card" key={i}>
+                  <div className="history-card-first">
+                    <span className="history-icon-bkg">
+                      <i className="ri-trophy-line"></i>
+                      <p>{i + 1}</p>
+                    </span>
+                    <div>
+                      <p>{client.name || " "}</p>
+                      <span>{client.dni || " "}</span>
+                    </div>
+                  </div>
+                  <div className="history-card-last">
+                    <span>
+                      {client.globalPayments > 0
+                        ? `$${client.globalPayments.toLocaleString()}`
+                        : ""}
+                    </span>
+                    <p>Total Pagado</p>
                   </div>
                 </div>
-                <div className="history-card-last">
-                  <span>$12.500</span>
-                  <p>2024/11/14</p>
-                </div>
-              </div>
-            ))}
+              ))}
           </div>
-          <p className="advice">Esta lista se actualizará cada 3 días.</p>
+          <p className="advice">Esta lista muestra los pagos totales.</p>
         </div>
         <div className="payments-cards-cont">
           <div className="payments-cards blueskewbkg">
@@ -134,8 +265,7 @@ function Payments({ toggleModal }) {
               <h5 className="blue-card-text">Pagos Totales (Mes)</h5>
               <i className="ri-money-dollar-circle-line blue-card-text"></i>
             </div>
-            <span>$45,550</span>
-            <p>+20.1% del mes anterior</p>
+            <span>${totalMonthlyPayments.toLocaleString()}</span>
             <div className="payments-card-skew rightskew blueskew"></div>
           </div>
 
@@ -144,8 +274,7 @@ function Payments({ toggleModal }) {
               <h5 className="green-card-text">Pagos Totales (Global)</h5>
               <i className="ri-line-chart-line green-card-text"></i>
             </div>
-            <span>$205,720</span>
-            <p>+7.15% del mes anterior</p>
+            <span>${totalGlobalPayments.toLocaleString()}</span>
             <div className="payments-card-skew leftskew greenskew"></div>
           </div>
 
@@ -154,7 +283,7 @@ function Payments({ toggleModal }) {
               <h5 className="purple-card-text">Próximo cierre</h5>
               <i className="ri-calendar-line purple-card-text"></i>
             </div>
-            <span>15 días</span>
+            <span>{daysUntilEndOfMonth} días</span>
             <p>Hasta el próximo cierre mensual</p>
             <div className="payments-card-skew rightskew purpleskew"></div>
           </div>
