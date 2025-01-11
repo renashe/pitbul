@@ -6,12 +6,15 @@
     "membership": "Normal",
     "state": 24,
     "currentPayment": {
+      "amount": 4000,
+      "date": "2025-01-11T03:37:12.698Z"
+    },
+    "previousPayment": {
       "amount": "5000",
       "date": "2024-12-02"
     },
-    "previousPayment": null,
-    "monthlyPayments": 14000,
-    "globalPayments": 14000
+    "monthlyPayments": 18000,
+    "globalPayments": 18000
   },
   {
     "name": "Ana María Pérez",
@@ -66,17 +69,17 @@
     "dni": "44789261",
     "phone": "1139845671",
     "membership": "Normal",
-    "state": 10,
+    "state": 12,
     "currentPayment": {
+      "amount": "1233",
+      "date": "2025-01-08"
+    },
+    "previousPayment": {
       "amount": "5000",
       "date": "2025-01-04"
     },
-    "previousPayment": {
-      "amount": "15000",
-      "date": "2024-12-15"
-    },
-    "monthlyPayments": 20000,
-    "globalPayments": 34000
+    "monthlyPayments": 21233,
+    "globalPayments": 35233
   },
   {
     "name": "Jorge Martínez",
@@ -179,17 +182,17 @@
     "dni": "78126453",
     "phone": "1135342089",
     "membership": "Normal",
-    "state": 6,
+    "state": 24,
     "currentPayment": {
+      "amount": "1233",
+      "date": "2025-01-10"
+    },
+    "previousPayment": {
       "amount": "2800",
       "date": "2024-12-25"
     },
-    "previousPayment": {
-      "amount": "2700",
-      "date": "2024-11-05"
-    },
-    "monthlyPayments": 2800,
-    "globalPayments": 5500
+    "monthlyPayments": 4033,
+    "globalPayments": 6733
   },
   {
     "name": "Martín García",
@@ -224,5 +227,22 @@
     },
     "monthlyPayments": 4444,
     "globalPayments": 4444
+  },
+  {
+    "name": "asd",
+    "dni": "123",
+    "phone": "123",
+    "membership": "Normal",
+    "state": 12,
+    "currentPayment": {
+      "amount": 1000,
+      "date": "2025-01-11"
+    },
+    "previousPayment": {
+      "amount": 555,
+      "date": "2025-01-11"
+    },
+    "monthlyPayments": 1678,
+    "globalPayments": 1678
   }
 ]

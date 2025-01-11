@@ -273,10 +273,12 @@ export function EditarClientePopup({ toggleModal, client }) {
 }
 
 export function VerClientePopup({ toggleModal, client }) {
-  const today = new Date();
-  const currentPaymentDate = new Date(client.currentPayment?.date);
+  const today = new Date().toISOString().split("T")[0];
+  const currentPaymentDate = client.currentPayment?.date
+    ? new Date(client.currentPayment.date).toISOString().split("T")[0]
+    : null;
 
-  const diffInMilliseconds = today - currentPaymentDate;
+  const diffInMilliseconds = new Date(today) - new Date(currentPaymentDate);
   const diffInDays = diffInMilliseconds / (1000 * 3600 * 24);
   const diffInDaysInt = Math.floor(diffInDays);
 
@@ -299,6 +301,46 @@ export function VerClientePopup({ toggleModal, client }) {
       return "yellow";
     } else {
       return "green";
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const priceAmount = parseFloat(formData.get("precio"));
+    const membership = formData.get("choice"); // Esto será "Normal" o "Libre"
+    const paymentDate = today;
+
+    // Establece 'state' según el tipo de membresía
+    const state = membership === "Normal" ? 12 : 24;
+
+    if (!priceAmount || !membership) {
+      return alert("Todos los campos son obligatorios.");
+    }
+
+    try {
+      const response = await fetch(
+        `http://localhost:3001/api/clients/${client.dni}/assign-payment-from-popup`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ priceAmount, membership, paymentDate, state }),
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Error al asignar el pago.");
+      }
+
+      const result = await response.json();
+      alert(result.message);
+      toggleModal(null); // Cierra el popup
+    } catch (error) {
+      alert(`Error: ${error.message}`);
     }
   };
 
@@ -360,18 +402,18 @@ export function VerClientePopup({ toggleModal, client }) {
         <i className="ri-calendar-check-line"></i>
         <h5>Renovar Membresía</h5>
       </div>
-      <form className="renewal-membership-cont">
+      <form className="renewal-membership-cont" onSubmit={handleSubmit}>
         <div className="renewal-input">
           <span>Precio:</span>
           <input type="number" name="precio"></input>
         </div>
         <div className="renewal-checks">
           <label>
-            <input type="radio" name="choice"></input>
+            <input type="radio" name="choice" value="Normal" required />
             <span>Normal</span>
           </label>
           <label>
-            <input type="radio" name="choice"></input>
+            <input type="radio" name="choice" value="Libre" required />
             <span>Libre</span>
           </label>
         </div>

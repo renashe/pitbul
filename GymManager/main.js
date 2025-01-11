@@ -6,7 +6,6 @@ const cors = require("cors");
 const fs = require("fs");
 const CLIENTS_FILE = path.join(__dirname, "clients.json");
 
-let mainWindow;
 const apiServer = express();
 const PORT = 3001;
 apiServer.use(bodyParser.json());
@@ -90,9 +89,8 @@ apiServer.put("/api/clients/:dni", (req, res) => {
 /// ASIGNAR PAGOS ///
 apiServer.post("/api/clients/:dni/assign-payment", (req, res) => {
   const { dni } = req.params;
-  const { priceAmount, membership, paymentDate, state } = req.body; // Ahora recibimos paymentDate
+  const { priceAmount, membership, paymentDate, state } = req.body;
 
-  // Validación de campos
   if (!priceAmount || !membership || !paymentDate) {
     return res.status(400).json({ error: "Todos los campos son obligatorios" });
   }
@@ -101,7 +99,6 @@ apiServer.post("/api/clients/:dni/assign-payment", (req, res) => {
     return res.status(400).json({ error: "El precio debe ser un número mayor a 0" });
   }
 
-  // Leemos los clientes desde el archivo
   const clients = readClientsFromFile();
   const clientIndex = clients.findIndex((client) => client.dni === dni);
 
@@ -111,11 +108,10 @@ apiServer.post("/api/clients/:dni/assign-payment", (req, res) => {
 
   const client = clients[clientIndex];
 
-  // Si es el primer pago, inicializamos los datos de pagos y los nuevos campos
   if (!client.currentPayment) {
     client.currentPayment = {
       amount: priceAmount,
-      date: paymentDate, // Usamos la fecha seleccionada por el usuario
+      date: paymentDate, 
     };
     client.previousPayment = {
       amount: null,
@@ -124,7 +120,6 @@ apiServer.post("/api/clients/:dni/assign-payment", (req, res) => {
     client.monthlyPayments = parseFloat(priceAmount);
     client.globalPayments = parseFloat(priceAmount);
   } else {
-    // Si ya tiene pagos previos, actualizamos currentPayment y acumulamos en los nuevos campos
     client.previousPayment = {
       amount: client.currentPayment.amount,
       date: client.currentPayment.date,
@@ -134,15 +129,12 @@ apiServer.post("/api/clients/:dni/assign-payment", (req, res) => {
       date: paymentDate,
     };
 
-    // Actualizamos pagos mensuales y globales
     const currentMonth = new Date(paymentDate).getMonth();
     const lastPaymentMonth = new Date(client.currentPayment.date).getMonth();
 
     if (currentMonth === lastPaymentMonth) {
-      // Mismo mes: sumamos al total mensual
       client.monthlyPayments += parseFloat(priceAmount);
     } else {
-      // Mes diferente: reiniciamos pagos mensuales
       client.monthlyPayments = parseFloat(priceAmount);
     }
 
@@ -150,13 +142,78 @@ apiServer.post("/api/clients/:dni/assign-payment", (req, res) => {
     client.state = state;
   }
 
-  // Actualizamos el cliente con el nuevo estado de pagos
   clients[clientIndex] = client;
 
-  // Escribimos los cambios de vuelta al archivo
   writeClientsToFile(clients);
 
-  // Respondemos con el mensaje de éxito y los datos del cliente actualizado
+  res.status(200).json({
+    message: "Pago asignado correctamente",
+    updatedClient: client,
+  });
+});
+
+///ASIGNAR PAGO SHORTCUT///
+apiServer.post("/api/clients/:dni/assign-payment-from-popup", (req, res) => {
+  const { dni } = req.params;
+  const { priceAmount, membership, paymentDate, state } = req.body;
+
+  if (!priceAmount || !membership || !paymentDate) {
+    return res.status(400).json({ error: "Todos los campos son obligatorios" });
+  }
+
+  if (isNaN(priceAmount) || priceAmount <= 0) {
+    return res.status(400).json({ error: "El precio debe ser un número mayor a 0" });
+  }
+
+  const clients = readClientsFromFile();
+  const clientIndex = clients.findIndex((client) => client.dni === dni);
+
+  if (clientIndex === -1) {
+    return res.status(404).json({ error: "Cliente no encontrado" });
+  }
+
+  const client = clients[clientIndex];
+
+  // Asigna el valor de 'membership' y 'state' correctamente
+  client.membership = membership;  // "Normal" o "Libre"
+  client.state = state;  // 12 o 24
+
+  if (!client.currentPayment) {
+    client.currentPayment = {
+      amount: priceAmount,
+      date: paymentDate,
+    };
+    client.previousPayment = {
+      amount: null,
+      date: null,
+    };
+    client.monthlyPayments = parseFloat(priceAmount);
+    client.globalPayments = parseFloat(priceAmount);
+  } else {
+    client.previousPayment = {
+      amount: client.currentPayment.amount,
+      date: client.currentPayment.date,
+    };
+    client.currentPayment = {
+      amount: priceAmount,
+      date: paymentDate,
+    };
+
+    const currentMonth = new Date(paymentDate).getMonth();
+    const lastPaymentMonth = new Date(client.currentPayment.date).getMonth();
+
+    if (currentMonth === lastPaymentMonth) {
+      client.monthlyPayments += parseFloat(priceAmount);
+    } else {
+      client.monthlyPayments = parseFloat(priceAmount);
+    }
+
+    client.globalPayments += parseFloat(priceAmount);
+  }
+
+  clients[clientIndex] = client;
+  writeClientsToFile(clients);
+
   res.status(200).json({
     message: "Pago asignado correctamente",
     updatedClient: client,
@@ -181,7 +238,7 @@ apiServer.get("/api/clients/payments-summary", (req, res) => {
 /// RESTAR DEL ESTADO DEL CLIENTE ///
 apiServer.put("/api/clients/:dni/decrease-state", (req, res) => {
   const { dni } = req.params;
-  const { decreaseAmount } = req.body; // Recibimos la cantidad a restar
+  const { decreaseAmount } = req.body;
 
   if (isNaN(decreaseAmount) || decreaseAmount <= 0) {
     return res.status(400).json({ error: "La cantidad a restar debe ser un número mayor a 0" });
@@ -196,14 +253,12 @@ apiServer.put("/api/clients/:dni/decrease-state", (req, res) => {
 
   let client = clients[clientIndex];
 
-  // Restamos del estado
   if (client.state >= decreaseAmount) {
     client.state -= decreaseAmount;
   } else {
     return res.status(400).json({ error: "El estado no puede ser menor a 0" });
   }
 
-  // Actualizamos el cliente
   clients[clientIndex] = client;
   writeClientsToFile(clients);
 
@@ -223,23 +278,19 @@ apiServer.put("/api/clients/:dni/delete-payment", (req, res) => {
   }
 
   if (paymentType === "currentPayment") {
-    // Restar los pagos de globalPayments y monthlyPayments
     const amountToSubtract = client.currentPayment.amount;
 
     client.globalPayments -= amountToSubtract;
     client.monthlyPayments -= amountToSubtract;
 
-    // Eliminar el pago actual y actualizar el cliente
     client.currentPayment = client.previousPayment || null;
     client.previousPayment = null;
   } else if (paymentType === "previousPayment") {
-    // Restar el pago previo de globalPayments y monthlyPayments
     const amountToSubtract = client.previousPayment.amount;
 
     client.globalPayments -= amountToSubtract;
     client.monthlyPayments -= amountToSubtract;
 
-    // Eliminar el pago previo
     client.previousPayment = null;
   } else {
     return res.status(400).json({ error: "Tipo de pago no válido" });
@@ -268,6 +319,8 @@ apiServer.get("/api/clients/:dni", (req, res) => {
   res.json(client);
 });
 
+
+let mainWindow;
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1024,
